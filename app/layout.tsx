@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         <header className="py-2 px-4 flex justify-between items-center bg-slate-900">
           <h1 className="text-3xl">Instapost</h1>
-          <Link href="/new" className="hover:bg-slate-600 rounded px-2 py-1">Add Post</Link>
+          <Link href="/new" className="hover:bg-slate-800 rounded px-2 py-1">Add Post</Link>
         </header>
         {children}
       </body>

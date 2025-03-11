@@ -17,4 +17,7 @@ export async function createPost(formData: FormData) {
   redirect("/");
 }
 
-// export async function deletePost(formData: FormData) {}
+export async function deletePost(id: number) {
+  await db.post.delete({ where: { id: id } });
+  revalidatePath("/");
+}

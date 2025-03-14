@@ -1,10 +1,21 @@
 import { db } from "@/prisma/db";
 import DeletePostButton from "../ui/delete-post-button";
 
+//  här exporterar vi alla URL parametrar för alla posts
+export async function generateStaticParams() {
+  const posts = await db.post.findMany();
+
+//   Här berättar den att detta är datan som den ska generera ut
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
+// huvudsakliga som exporteras
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
   const post = await db.post.findUnique({ where: { slug } });

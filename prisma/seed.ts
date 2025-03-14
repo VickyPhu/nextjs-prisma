@@ -6,30 +6,35 @@ async function main() {
     data: [
       {
         title: "Understanding React Hooks",
+        slug: "understanding-react-hooks",
         content:
           "React Hooks revolutionized functional components by enabling state and side effects. The useState and useEffect hooks are among the most commonly used.",
         author: "Jane Doe",
       },
       {
         title: "Why TypeScript is a Game Changer",
+        slug: "why-typeScript-is-a-game-changer",
         content:
           "TypeScript provides static typing, making JavaScript development more robust. It helps catch errors early and improves code maintainability.",
         author: "John Smith",
       },
       {
         title: "Introduction to Node.js",
+        slug: "introduction-to-node-js",
         content:
           "Node.js allows JavaScript to run on the server, making it possible to build scalable and fast backend applications. It's event-driven and non-blocking.",
         author: "Alice Johnson",
       },
       {
         title: "CSS Grid vs Flexbox",
+        slug: "css-grid-vs-flexbox",
         content:
           "CSS Grid is great for two-dimensional layouts, while Flexbox is ideal for one-dimensional alignment. Knowing when to use each is key to responsive design.",
         author: "David Brown",
       },
       {
         title: "Exploring Angular Standalone Components",
+        slug: "exploring-angular-standalone-components",
         content:
           "Angular 14 introduced standalone components, making it easier to build modular applications without relying on NgModules.",
         author: "Victoria Phu",

@@ -1,18 +1,29 @@
 import { db } from "@/prisma/db";
+import { Metadata } from "next";
 import DeletePostButton from "../ui/delete-post-button";
+
+interface Props {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await db.post.findUnique({ where: { slug } });
+
+  return {
+    title: post?.title + " | Instapost",
+    description: post?.content,
+  };
+}
 
 //  här exporterar vi alla URL parametrar för alla posts
 export async function generateStaticParams() {
   const posts = await db.post.findMany();
 
-//   Här berättar den att detta är datan som den ska generera ut
+  //   Här berättar den att detta är datan som den ska generera ut
   return posts.map((post) => ({
     slug: post.slug,
   }));
-}
-
-interface Props {
-  params: Promise<{ slug: string }>;
 }
 
 // huvudsakliga som exporteras
